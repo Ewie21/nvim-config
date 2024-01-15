@@ -4,5 +4,3 @@
 
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
-
-keymap.set("i", "<Tab>", [[pumvisible() ? (complete_info().selected == -1 ? "<C-e><Tab>" : "<C-y>") : "<TAB>"]], opts)
