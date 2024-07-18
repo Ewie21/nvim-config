@@ -34,9 +34,9 @@ return {
 				"svelte",
 				"lua_ls",
 				"clangd",
-				"emmet_ls",
-				"prismals",
-				"pyright",
+				"emmet_language_server",
+				"basedpyright",
+				"rust_analyzer",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed

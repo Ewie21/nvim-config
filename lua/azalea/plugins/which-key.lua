@@ -9,7 +9,7 @@ return {
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
-		window = {
+		win = {
 			border = "none", -- none, single, double, shadow
 			position = "bottom", -- bottom, top
 			margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
