@@ -65,42 +65,31 @@ return {
 
 		lspconfig.rust_analyzer.setup({
 			-- Server-specific settings. See `:help lspconfig-setup`
+			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = {
-				["rust-analyzer"] = {},
+				["rust-analyzer"] = {
+					imports = {
+						granularity = {
+							group = "module",
+						},
+						prefix = "self",
+					},
+					cargo = {
+						buildScripts = {
+							enable = true,
+						},
+					},
+					procMacro = {
+						enable = true,
+					},
+				},
 			},
 		})
 
 		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		})
-
-		lspconfig["harper_ls"].setup({
-			settings = {
-				["harper-ls"] = {
-					userDictPath = "~/.config/nvim/dict.txt",
-					linters = {
-						spell_check = true,
-						spelled_numbers = false,
-						an_a = true,
-						sentence_capitalization = false,
-						unclosed_quotes = true,
-						wrong_quotes = false,
-						long_sentences = true,
-						repeated_words = true,
-						spaces = true,
-						matcher = true,
-						correct_number_suffix = true,
-						number_suffix_capitalization = true,
-						multiple_sequential_pronouns = true,
-					},
-					codeActions = {
-						forceStable = true,
-					},
-				},
-			},
-            capabilities = capabilities,
-            on_attach = on_attach
 		})
 
 		lspconfig["gopls"].setup({
